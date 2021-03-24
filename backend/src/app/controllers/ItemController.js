@@ -3,7 +3,7 @@ import Item from '../models/Item';
 
 class ItemController {
   async index(req, res) {
-    const itens = await Item.findAll();
+    const itens = await Item.findAll({where: {status: true}});
 
     return res.json(itens);
   }
@@ -20,8 +20,11 @@ class ItemController {
 
     const itemExists = await Item.findOne({ where: { name: req.body.name } });
 
-    if (itemExists) {
+    if (itemExists && itemExists.status) {
       return res.status(400).json({ error: 'Item already exists.' });
+    } else if (itemExists) {
+      await itemExists.update({status: true, quantity: req.body.quantity});
+      return res.json(itemExists);
     }
 
     const { id, name, quantity, status } = await Item.create({

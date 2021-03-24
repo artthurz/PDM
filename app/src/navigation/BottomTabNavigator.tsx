@@ -22,14 +22,14 @@ export default function BottomTabNavigator() {
         name="Adicionar"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="add-outline" color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Visualizar"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="list-outline" color={color} />,
         }}
       />
     </BottomTab.Navigator>
