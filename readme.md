@@ -31,5 +31,7 @@ Acessar a pasta PDM\app
 
 2- Baixar os pacotes rodando o comando yarn ou npm na pasta PDM\app. 
 
-3- 
+3- Executar o projecto usando o comando "expo start".
+
+4- Após isso o servidor de desenvolvimento estará rodando e poderá ser acessado através do QR Code, usando o aplicativo do Expo disponivel na Play Store ou caso tiver iPhone, pode acessar diretamente pela câmera dele.
 
