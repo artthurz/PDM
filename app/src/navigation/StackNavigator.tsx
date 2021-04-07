@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/Home";
 import CreateItems from "../screens/CreateItems";
 import Items from "../screens/Items";
+import Map from "../screens/Map";
 import { IconButton } from "react-native-paper";
 
 const Stack = createStackNavigator();
@@ -57,4 +58,26 @@ const HomeStackNavigator = ({navigation}) => {
   );
 };
 
-export { ProjectsStackNavigator, HomeStackNavigator };
+const MapStackNavigator = ({navigation}) => {
+  return (
+    <Stack.Navigator screenOptions={screenOptionStyle}>
+      <Stack.Screen
+        name="Map"
+        component={Map}
+        options={{
+          headerTitle: "Map",
+          headerRight: () => (
+            <IconButton
+              onPress={() => navigation.openDrawer()}
+              icon="menu"
+              size={24}
+              color={screenOptionStyle.headerTintColor}
+            />
+          ),
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+export { ProjectsStackNavigator, HomeStackNavigator, MapStackNavigator };
